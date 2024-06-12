@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * {
+            font-family: Arial, sans-serif;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f4f4f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        form {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            width: 400px;
+            font-size: 16px;
+        }
+
+        form h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        form label {
+            display: block;
+            margin-bottom: 8px;
+            color: #555;
+        }
+
+        form input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        form button {
+            background: #4CAF50;
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+        }
+
+        form button:hover {
+            background: #45a049;
+        }
+    </style>
+    <script>
+        function multiply() {
+          var number = document.getElementById("Sale").value;
+          var result = number * 52;
+          document.getElementById("result").innerHTML = "= " + result + " MRU";
+        }
+    </script>
+</head>
+
+<body>
+    <form>
+        <h1 class="Card" id="Card">Apple Gift Card Spain</h1>
+        <label for="">أدخل قيمة</label>
+        <input type="number" class="Sale" placeholder="من 3 الي 200" id="Sale" oninput="multiply()" >
+        <p id="result" class="result">= 0 MRU</p>
+        <label for="Name">الأسم</label>
+        <input type="text" class="Name" id="Name" placeholder="الأسم">
+        <label for="Whats">الواتس أب</label>
+        <input type="number" class="Whats" id="Whats" placeholder="الرقم واتس أب الخاص بك">
+        <label for="NumBank" style="color:rgb(0, 0, 0); background-color:darkgrey;">يرجي تحويل الأموال إلى هذا الرقم (31323258)</label>
+        <label for="NumBank">رقم الهاتف الذي تم التحويل منه:</label>
+        <input type="number" class="NumBank" id="NumBank" placeholder="Bankily">
+
+        <button type="button" onclick="sendWhatsapp()">Send</button>
+    </form>
+
+    <script>
+        function sendWhatsapp() {
+            var phonenumber = "+22249946666";
+            var card = document.querySelector(".Card").textContent;
+            var UM = document.querySelector(".result").textContent;
+            var Sale = document.querySelector(".Sale").value;
+            var name = document.querySelector(".Name").value;
+            var Whatsapp = document.querySelector(".Whats").value;
+            var Numero_Bank = document.querySelector(".NumBank").value;
+
+            var url = "https://wa.me/" + phonenumber + "?text="
+                + "Card : " + card + "%0a"
+                + "Sale : " + Sale + "%0a"
+                + "Total UM : " + UM + "%0a"
+                + "Name : " + name + "%0a"
+                + "Whatsapp : " + Whatsapp + "%0a"
+                + "Numero de Bankily : " + Numero_Bank + "%0a%0a"
+                + "please verify my order";
+
+            window.open(url, "_blank").focus();
+        }
+    </script>
+</body>
+
+</html>

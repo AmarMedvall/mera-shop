@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+
+            box-sizing: border-box;
+
+            padding: 0;
+
+            margin: 0;
+            
+
+        }
+
+        body {
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            font-family: Arial, Helvetica, sans-serif;
+
+            min-height: 90vh;
+        }
+
+        .form {
+
+            padding: 30px;
+
+            background-color: #F2A771;
+
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+            border-radius: 5px;
+
+        }
+
+        h3 {
+
+            text-align: center;
+
+            padding: 10px;
+
+            color: #fff;
+
+        }
+
+        input,
+        textarea {
+
+            width: 250px;
+
+            display: block;
+
+            padding: 10px;
+
+            border-radius: 3px;
+
+            font-size: 12px;
+
+            margin: 15px;
+
+            border: 0;
+
+            outline: none;
+
+        }
+
+        #btn {
+
+            padding: 10px;
+
+            margin: 15px;
+
+            width: 250px;
+
+            border: 0;
+
+            border-radius: 5px;
+
+            background-color: #1e90ff;
+
+            color: #fff;
+            cursor: pointer;
+        }
+    </style>
+    <script src="script.js" type="text/javascript"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init({
+                publicKey: "f9WZGRwP6b-r8nMLd",
+            });
+        })();
+    </script>
+  <script>
+    function multiply() {
+      var number = document.getElementById("myNumber").value;
+      var result = number * 52;
+      document.getElementById("result").innerHTML = result + " MRU";
+    }
+  </script>
+
+
+</head>
+
+<body>
+
+    <div class="form">
+        <h3 id="Card">apple store Spain</h3>
+        <label for="myNumber">الرجاء إدخال مبلغ الرصيد بين €3 و €200:</label>
+        <input type="number" id="myNumber" name="myNumber" min="3" max="200" placeholder="إختر مبلغ" oninput="multiply()">
+  <p id="result"></p>
+
+<form>
+  <p style="color:white;">يرجي إرسال المبلغ إلى هذا الرقم (bankily, sedad, Masrevi)</p>
+  <p style="color:green;">31323258</p>
+<br><h6>من فضلك قم بتحميل لقطة الشاشة لرسالة النصية لعملية التحويل هنا</h6>
+<a href="https://wa.me/+22249946666?text=Verifie order" target="_blank">whatsapp</a>
+</form>
+        <br>
+        <input type="text" id="name" placeholder="الأسم">
+			<input type="Whats" id="Whats" placeholder="رقم الواتس أب">
+			
+        <input type="number" id="Numero1" placeholder="رقم الهاتف الذي تم تحويل منه">
+        <input type="email" id="email" placeholder="@Gmail">
+        <textarea id="message" placeholder="رسالة نصية"></textarea>
+        <button id="btn" onclick="sendMail()">إرسال</button>
+    </div>
+
+</body>
+
+</html>
